@@ -231,3 +231,36 @@ alter table Seguridad.Usuario
 add constraint FK_Usuario_Cargo foreign key(idCargo) 
 references Seguridad.Cargo(idCargo) 
 go
+
+--Insercion de datos
+insert into Academico.Carrera(nombre, precio) values 
+('Ingenieria en Sistemas', 2500.00), 
+('Arquitectura', 3200.00) 
+go
+
+insert into Seguridad.Cargo(nombre) values 
+('Administrador'), 
+('Docente') 
+go
+
+insert into Academico.Estudiante (cif, nombres, apellidos, fechaNac, email, idCarrera) values 
+('25010549', 'Maria', 'Carrasco', '10-01-2008', 'maria@gmail.com', 1) 
+go
+
+insert into Seguridad.Usuario (cif, nombres, apellidos, fechaNac, pw, email, idCargo) values 
+( '20250003', 'Carlos', 'Lopez', '2000-10-10', convert(varbinary(64), 'password123'), 'carlos@gmail.com', 1 ) 
+go
+
+--Consultas
+
+select * from Academico.Carrera 
+go 
+
+select * from Academico.Estudiante 
+go 
+
+select * from Seguridad.Cargo 
+go 
+
+select * from Seguridad.Usuario 
+go
